@@ -1,0 +1,37 @@
+https://i96l24trn0.execute-api.eu-west-2.amazonaws.com/prod/
+
+Outputs:
+Space-finder.SpaceApiEndpointDA7E4050 = https://i96l24trn0.execute-api.eu-west-2.amazonaws.com/prod/
+Space-finder.UserPoolClientId = 6jcu45avlj5d0jrto3lclqm23o
+Space-finder.UserPoolId = eu-west-2_ZaCWB7KlC
+
+@token =
+
+GET {{endpoint}}/hello/
+###
+
+GET {{endpoint}}/spaces?spaceId=c9f3ac12-a343-45dd-90e9-dd4f163d268b
+###
+
+GET {{endpoint}}/spaces?location=London
+###
+
+POST {{endpoint}}/spaces/
+Content-Type: application/json
+
+{
+    "location": "London",
+    "name": "Best location"
+}
+###
+
+PUT {{endpoint}}/spaces?spaceId=64c87073-5ffe-4cbd-b867-2645b91fccde
+Content-Type: application/json
+
+{
+    "location": "Updated Location"
+}
+###
+
+DELETE  {{endpoint}}/spaces?spaceId=64c87073-5ffe-4cbd-b867-2645b91fccde
+###

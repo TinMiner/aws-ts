@@ -1,0 +1,29 @@
+shell
+
+aws cognito-idp sign-up \
+  --client-id YOUR_USER_POOL_CLIENT_ID \ 6jcu45avlj5d0jrto3lclqm23o
+  --username "testUser" \
+  --password "password123"
+Confirm the user, so they can log in
+
+aws cognito-idp sign-up --client-id 6jcu45avlj5d0jrto3lclqm23o --username 'alanagain' --password 'Hihihihi1@'
+
+shell
+
+aws cognito-idp admin-confirm-sign-up \
+  --user-pool-id YOUR_USER_POOL_ID \   eu-west-2_ZaCWB7KlC
+  --username "alanagain"
+Log the user in
+
+aws cognito-idp admin-confirm-sign-up --user-pool-id eu-west-2_ZaCWB7KlC --username 'alanagain'
+
+shell
+
+aws cognito-idp initiate-auth \
+  --auth-flow USER_PASSWORD_AUTH \
+  --auth-parameters \
+  USERNAME="testUser",PASSWORD="password123" \
+  --client-id YOUR_USER_POOL_CLIENT_ID
+
+
+aws cognito-idp initiate-auth --auth-flow CUSTOM --auth-parameters USERNAME='alanagain', PASSWORD='Hihihihi1@' --client-id  6jcu45avlj5d0jrto3lclqm23o
